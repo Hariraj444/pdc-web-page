@@ -1,60 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDC Web Page</title>
 
-  <link rel="stylesheet" href="style.css">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>PDC Website</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <nav>
-    <h1>PDC</h1>
+  <!-- NAVBAR -->
 
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
+  <nav class="navbar">
+
+    <div class="logo">
+      PDC
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a href="#">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+
     </ul>
+
   </nav>
+
+  <!-- HERO -->
 
   <section class="hero">
 
-    <h2>Build Modern Websites</h2>
+    <div class="hero-content">
+
+      <h1>
+        Parallel & Distributed Computing
+      </h1>
+
+      <p>
+        Explore modern computing systems with beautiful UI and responsive design.
+      </p>
+
+      <button>
+        Explore Now
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features" id="features">
+
+    <div class="card">
+
+      <h2>Parallelism</h2>
+
+      <p>
+        Execute multiple tasks simultaneously using modern architectures.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Scalability</h2>
+
+      <p>
+        Build highly scalable distributed computing systems.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Performance</h2>
+
+      <p>
+        Improve efficiency and execution speed.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <h2>
+      About PDC
+    </h2>
 
     <p>
-      Create responsive and beautiful web pages using HTML, CSS and JavaScript.
+      Parallel and Distributed Computing helps solve large-scale problems efficiently using multiple processors and distributed systems.
     </p>
 
-    <button>Explore</button>
-
   </section>
 
-  <section class="cards">
-
-    <div class="card">
-      <h3>HTML</h3>
-      <p>Structure your webpages easily.</p>
-    </div>
-
-    <div class="card">
-      <h3>CSS</h3>
-      <p>Create beautiful modern designs.</p>
-    </div>
-
-    <div class="card">
-      <h3>JavaScript</h3>
-      <p>Add interactivity and animations.</p>
-    </div>
-
-  </section>
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 PDC Web Page
+
+    <p>
+      © 2026 PDC Website
+    </p>
+
   </footer>
 
 </body>
+
 </html>
