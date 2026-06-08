@@ -11,200 +11,253 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    color:white;
-    background:linear-gradient(
-        135deg,
-        #0f172a,
-        #1e3a8a,
-        #f97316
-    );
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#3b82f6;
+filter:blur(180px);
+top:-200px;
+left:-150px;
+opacity:.4;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#f97316;
+filter:blur(180px);
+bottom:-200px;
+right:-150px;
+opacity:.4;
+z-index:-1;
 }
 
 /* NAVBAR */
 
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+z-index:1000;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:800;
+font-size:28px;
+font-weight:800;
+color:#f97316;
 }
 
 nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
+display:flex;
+list-style:none;
+gap:25px;
 }
 
 nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+text-decoration:none;
+color:white;
+transition:.3s;
 }
 
 nav ul li a:hover{
-    color:#facc15;
+color:#f97316;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:60px;
-    padding:100px 8%;
-    flex-wrap:wrap;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:100px 8%;
+gap:60px;
+flex-wrap:wrap;
 }
 
-.hero-text{
-    flex:1;
-    min-width:300px;
+.hero-content{
+flex:1;
+min-width:300px;
 }
 
-.hero-text h1{
-    font-size:5rem;
-    line-height:1.1;
-    background:linear-gradient(
-        90deg,
-        #f97316,
-        #facc15
-    );
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.hero-content h3{
+font-size:20px;
+color:#94a3b8;
 }
 
-.hero-text h3{
-    margin-top:15px;
-    font-size:1.5rem;
-    color:#e2e8f0;
+.hero-content h1{
+font-size:70px;
+font-weight:800;
+line-height:1.1;
+margin-top:10px;
 }
 
-.hero-text p{
-    margin-top:20px;
-    line-height:1.8;
-    max-width:600px;
+.hero-content span{
+color:#f97316;
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:#cbd5e1;
+max-width:600px;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 35px;
-    border-radius:50px;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(
-        90deg,
-        #f97316,
-        #facc15
-    );
-    transition:.3s;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:#f97316;
+color:white;
+}
+
+.btn-secondary{
+border:2px solid #f97316;
+color:white;
 }
 
 .btn:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .hero-image{
-    flex:1;
-    text-align:center;
+flex:1;
+display:flex;
+justify-content:center;
 }
 
 .hero-image img{
-    width:400px;
-    max-width:100%;
-    border-radius:30px;
-    box-shadow:
-    0 0 30px rgba(249,115,22,.5),
-    0 0 70px rgba(59,130,246,.5);
+width:350px;
+height:350px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid rgba(255,255,255,0.1);
+box-shadow:0 0 50px rgba(249,115,22,.4);
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-    padding:80px 8%;
+padding:90px 8%;
 }
 
 .section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:40px;
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
 }
 
-/* CARDS */
-
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    padding:25px;
-    transition:.3s;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .card h3{
-    margin-bottom:10px;
+margin-bottom:10px;
+color:#f97316;
+}
+
+/* SKILLS */
+
+.skill{
+text-align:center;
+font-weight:600;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.contact-box p{
+margin:15px 0;
+font-size:18px;
 }
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:rgba(0,0,0,0.2);
+text-align:center;
+padding:30px;
+background:rgba(255,255,255,0.05);
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.hero-text h1{
-    font-size:3rem;
+.hero-content h1{
+font-size:45px;
 }
 
 nav{
-    flex-direction:column;
-    gap:10px;
-}
-
-nav ul{
-    gap:15px;
+flex-direction:column;
+gap:10px;
 }
 
 .hero{
-    text-align:center;
+text-align:center;
+}
+
+.buttons{
+justify-content:center;
 }
 }
 
@@ -214,120 +267,150 @@ nav ul{
 <body>
 
 <nav>
-    <div class="logo">HARIRAJ J</div>
+<div class="logo">HARIRAJ</div>
 
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
 <section class="hero">
 
-    <div class="hero-text">
+<div class="hero-content">
 
-        <h1>HARIRAJ J</h1>
+<h3>Hello, I'm</h3>
 
-        <h3>Computer Science Engineering Student</h3>
+<h1>Hariraj <span>J</span></h1>
 
-        <p>
-            Passionate about technology, software development,
-            innovation. Inspired by excellence,
-            leadership and dedication both in academics and life.
-        </p>
+<h3>Computer Science Engineering Student</h3>
 
-        <a href="#about" class="btn">Explore Portfolio</a>
+<p>
+Passionate about Web Development, Artificial Intelligence,
+Software Engineering and creating innovative digital solutions.
+Always learning, building and improving.
+</p>
 
-    </div>
+<div class="buttons">
+<a href="#projects" class="btn btn-primary">View Projects</a>
+<a href="#contact" class="btn btn-secondary">Contact Me</a>
+</div>
 
-    <div class="hero-image">
+</div>
 
-        <!-- Replace messi.jpg with your image file -->
-        <img src="messi.jpg" alt="Lionel Messi">
-
-    </div>
+<div class="hero-image">
+<img src="messi.jpg" alt="Hariraj">
+</div>
 
 </section>
 
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+<h2 class="section-title">About Me</h2>
 
-    <div class="card">
-        <p>
-            I am Hariraj J, a Computer Science Engineering student
-            passionate about coding, web development, artificial
-            intelligence and modern technologies. I enjoy solving
-            real-world problems and continuously learning new skills.
-        </p>
-    </div>
+<div class="card">
+<p>
+I am Hariraj J, a Computer Science Engineering student with
+a strong interest in web technologies, software development,
+artificial intelligence and problem solving. I enjoy creating
+modern websites and learning new technologies that help solve
+real-world challenges.
+</p>
+</div>
 
 </section>
 
 <section id="skills">
 
-    <h2 class="section-title">Skills</h2>
+<h2 class="section-title">Skills</h2>
 
-    <div class="grid">
+<div class="grid">
 
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">JavaScript</div>
-        <div class="card">Python</div>
-        <div class="card">Java</div>
-        <div class="card">C Programming</div>
-        <div class="card">GitHub</div>
-        <div class="card">Artificial Intelligence</div>
+<div class="card skill">HTML</div>
+<div class="card skill">CSS</div>
+<div class="card skill">JavaScript</div>
+<div class="card skill">Python</div>
+<div class="card skill">Java</div>
+<div class="card skill">C Programming</div>
+<div class="card skill">Git & GitHub</div>
+<div class="card skill">Artificial Intelligence</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="projects">
 
-    <h2 class="section-title">Projects</h2>
+<h2 class="section-title">Projects</h2>
 
-    <div class="grid">
+<div class="grid">
 
-        <div class="card">
-            <h3>Portfolio Website</h3>
-            <p>Responsive personal portfolio website.</p>
-        </div>
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>
+Designed and developed a responsive portfolio website using
+HTML, CSS and JavaScript.
+</p>
+</div>
 
-        <div class="card">
-            <h3>AI Project</h3>
-            <p>Machine learning and AI based application.</p>
-        </div>
+<div class="card">
+<h3>PDC Web Page</h3>
+<p>
+Created a professional webpage and deployed it online using
+GitHub and Vercel.
+</p>
+</div>
 
-        <div class="card">
-            <h3>Web Application</h3>
-            <p>Modern full-stack web application project.</p>
-        </div>
+<div class="card">
+<h3>AI Based Project</h3>
+<p>
+Developed AI and machine learning concepts to solve practical
+problems and improve automation.
+</p>
+</div>
 
-    </div>
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="card">
+
+<h3>B.E. Computer Science Engineering</h3>
+
+<p>
+Currently pursuing Computer Science Engineering with interests
+in Web Development, AI, Software Development and Emerging Technologies.
+</p>
+
+</div>
 
 </section>
 
 <section id="contact">
 
-    <h2 class="section-title">Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-    <div class="card">
+<div class="card contact-box">
 
-        <p>Email: goofynigga@example.com</p>
-        <br>
-        <p>GitHub: github.com/HARIRAJ</p>
-        <br>
-        <p>LinkedIn: linkedin.com/in/HARIRAJ </p>
+<p>📧 Email: your-email@example.com</p>
 
-    </div>
+<p>💻 GitHub: github.com/Hariraj444</p>
+
+<p>🔗 LinkedIn: linkedin.com/in/your-profile</p>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 HARIRAJ J | All Rights Reserved
+© 2026 Hariraj J | All Rights Reserved
 </footer>
 
 </body>
